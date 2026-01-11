@@ -1,0 +1,91 @@
+[gd_scene load_steps=11 format=3 uid="uid://dv5xrgafsf2cv"]
+
+[ext_resource type="Script" path="res://mario.gd" id="1_mqqoy"]
+[ext_resource type="Texture2D" uid="uid://vdsao6swqwxq" path="res://img/mario.png" id="1_oxifg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d1udw"]
+size = Vector2(12, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gja3b"]
+atlas = ExtResource("1_oxifg")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g3x10"]
+atlas = ExtResource("1_oxifg")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6rc1v"]
+atlas = ExtResource("1_oxifg")
+region = Rect2(48, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sc158"]
+atlas = ExtResource("1_oxifg")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ylti6"]
+atlas = ExtResource("1_oxifg")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0yyu4"]
+atlas = ExtResource("1_oxifg")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4lw0o"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gja3b")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g3x10")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6rc1v")
+}],
+"loop": true,
+"name": &"skid",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sc158")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ylti6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0yyu4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ylti6")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[node name="Mario" type="CharacterBody2D"]
+script = ExtResource("1_mqqoy")
+
+[node name="Shape" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_d1udw")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_4lw0o")
+animation = &"jump"
+
+[node name="Camera" type="Camera2D" parent="."]
+limit_left = 0
+limit_top = 0
+limit_right = 512
+limit_bottom = 240
