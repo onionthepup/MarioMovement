@@ -83,7 +83,7 @@ shape = SubResource("RectangleShape2D_d1udw")
 
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_4lw0o")
-animation = &"jump"
+animation = &"skid"
 
 [node name="Camera" type="Camera2D" parent="."]
 limit_left = 0
