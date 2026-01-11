@@ -25,6 +25,7 @@ func _physics_process(delta):
 
 	# Handle Jump.
 	if Input.is_action_just_pressed("jump") and is_on_floor():
+		$Jump.play()
 		if velocity.x > JUMPSPEEDTOGGLE:
 			velocity.y -= BIGJUMP
 		else:

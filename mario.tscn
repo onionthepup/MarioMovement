@@ -1,7 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://dv5xrgafsf2cv"]
+[gd_scene load_steps=12 format=3 uid="uid://dv5xrgafsf2cv"]
 
 [ext_resource type="Script" path="res://mario.gd" id="1_mqqoy"]
 [ext_resource type="Texture2D" uid="uid://vdsao6swqwxq" path="res://img/mario.png" id="1_oxifg"]
+[ext_resource type="AudioStream" uid="uid://ckm6c5vi6wclv" path="res://sound/jump.mp3" id="3_npb4y"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d1udw"]
 size = Vector2(12, 16)
@@ -89,3 +90,6 @@ limit_left = 0
 limit_top = 0
 limit_right = 512
 limit_bottom = 240
+
+[node name="Jump" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_npb4y")
