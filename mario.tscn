@@ -1,6 +1,6 @@
 [gd_scene load_steps=12 format=3 uid="uid://dv5xrgafsf2cv"]
 
-[ext_resource type="Script" path="res://mario.gd" id="1_mqqoy"]
+[ext_resource type="Script" uid="uid://byr628hyyi27l" path="res://mario.gd" id="1_mqqoy"]
 [ext_resource type="Texture2D" uid="uid://vdsao6swqwxq" path="res://img/mario.png" id="1_oxifg"]
 [ext_resource type="AudioStream" uid="uid://ckm6c5vi6wclv" path="res://sound/jump.mp3" id="3_npb4y"]
 
@@ -88,7 +88,7 @@ animation = &"skid"
 [node name="Camera" type="Camera2D" parent="."]
 limit_left = 0
 limit_top = 0
-limit_right = 512
+limit_right = 768
 limit_bottom = 240
 
 [node name="Jump" type="AudioStreamPlayer" parent="."]
